@@ -17,14 +17,14 @@ public class Solution {
 
         while(l2!=null && l2.next!=null){
             l1=l1.next;
-            l2=l2.next.next;
-            if(l1==l2){
-                l1=head;
-                while(l1!=l2){
-                    l1=l1.next;
+            l2=l2.next.next; // Simple hare-tortoise to detect cycle
+            if(l1==l2){     // Additional steps to get the start of cycle
+                l1=head;    // set any one pointer to head
+                while(l1!=l2){      // more one steps both pointers
+                    l1=l1.next; 
                     l2=l2.next;
                 }
-                return l1;
+                return l1;      // When they meet it will be the start of cycle
             }
 
         }
