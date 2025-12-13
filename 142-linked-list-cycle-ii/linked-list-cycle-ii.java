@@ -11,16 +11,36 @@
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        HashSet<ListNode> cycle = new HashSet<>();
+        // Method using the two pointers Specifically the Hare Tortoise Algorithm
+        ListNode l1= head;
+        ListNode l2= head;
 
-        ListNode temp = head;
-        while (temp != null) {
-            if (cycle.contains(temp)) {
-                return temp; // Cycle detected, return the node
+        while(l2!=null && l2.next!=null){
+            l1=l1.next;
+            l2=l2.next.next;
+            if(l1==l2){
+                l1=head;
+                while(l1!=l2){
+                    l1=l1.next;
+                    l2=l2.next;
+                }
+                return l1;
             }
-            cycle.add(temp); // Mark node as visited
-            temp = temp.next;
+
         }
         return null;
+        // Method using the HashSet
+
+        // HashSet<ListNode> cycle = new HashSet<>();
+
+        // ListNode temp = head;
+        // while (temp != null) {
+        //     if (cycle.contains(temp)) {
+        //         return temp; 
+        //     }
+        //     cycle.add(temp); 
+        //     temp = temp.next;
+        // }
+        // return null;
     }
 }
