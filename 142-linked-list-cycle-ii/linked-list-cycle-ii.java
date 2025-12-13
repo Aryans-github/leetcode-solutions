@@ -11,14 +11,14 @@
  */
 public class Solution {
     public ListNode detectCycle(ListNode head) {
-        HashMap<ListNode, Boolean> cycle = new HashMap<>();
+        HashSet<ListNode> cycle = new HashSet<>();
 
         ListNode temp = head;
         while (temp != null) {
-            if (cycle.containsKey(temp)) {
+            if (cycle.contains(temp)) {
                 return temp; // Cycle detected, return the node
             }
-            cycle.put(temp, true); // Mark node as visited
+            cycle.add(temp); // Mark node as visited
             temp = temp.next;
         }
         return null;
