@@ -35,7 +35,7 @@ class Solution {
 
         int len = n + m;
 
-        // find median
+   
         if (len % 2 == 0) {
             return (arr[len / 2] + arr[(len / 2) - 1]) / 2.0;
         } else {
