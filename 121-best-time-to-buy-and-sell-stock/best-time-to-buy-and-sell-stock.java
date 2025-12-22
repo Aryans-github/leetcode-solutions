@@ -13,7 +13,8 @@ class Solution {
                 
             }
             profit = prices[i]-minValue;
-            maxValue = Math.max(profit,maxValue);
+            if(profit>maxValue) maxValue=profit;
+            // maxValue = Math.max(profit,maxValue);
         }
         
         return maxValue;
