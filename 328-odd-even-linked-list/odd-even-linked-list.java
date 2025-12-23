@@ -17,7 +17,7 @@ class Solution {
         // }
         ListNode first = head;
         ListNode second = head.next;
-        ListNode newhead = head.next;
+        ListNode newhead = second;
         while (second != null && second.next != null) {
             // if (!first % 2 == 0) {
                 first.next=second.next;
