@@ -1,6 +1,7 @@
 class Solution {
     public int repeatedNTimes(int[] nums) {
 
+        // Frequency Array Method 
         int [] counts = new int [10001];
 
         for(int i:nums){
@@ -18,6 +19,8 @@ class Solution {
         }
 
         return value;
+
+        // Hashmap method
 
         // HashMap<Integer, Integer> hs = new HashMap<>();
         // for (int i : nums) {
