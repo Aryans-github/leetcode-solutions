@@ -15,15 +15,13 @@ class Solution {
                 if (hs.get(s.charAt(r)) >= l) {
                     l = hs.get(s.charAt(r)) + 1;
                     hs.put(s.charAt(r), r);
-                    
 
-                }
-                else{
-                    hs.put(s.charAt(r),r);
+                } else {
+                    hs.put(s.charAt(r), r);
                 }
             } else {
                 hs.put(s.charAt(r), r);
-                
+
             }
             maxLength = Math.max(r - l + 1, maxLength);
             r++;
