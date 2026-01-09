@@ -8,27 +8,27 @@ class Solution {
                 zeros++;
             }
 
-            // if(zeros<=k){
-            //     maxLength = Math.max(r - l + 1, maxLength);
+            if(zeros<=k){
+                maxLength = Math.max(r - l + 1, maxLength);
                 
-            // }
-            // else{
-            //     while(nums[l]!=0){
-            //         l++;
-            //     }
-            //     zeros--;
-            //     l++;
-            // }
-            // r++;
-            while (zeros > k) {
-                if (nums[l] == 0) {
-                    zeros--;
+            }
+            else{
+                while(nums[l]!=0){
+                    l++;
                 }
+                zeros--;
                 l++;
             }
-
-            maxLength = Math.max(r - l + 1, maxLength);
             r++;
+            // while (zeros > k) {
+            //     if (nums[l] == 0) {
+            //         zeros--;
+            //     }
+            //     l++;
+            // }
+
+            // maxLength = Math.max(r - l + 1, maxLength);
+            // r++;
         }
         return maxLength;
     }
