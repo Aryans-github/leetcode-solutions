@@ -1,5 +1,8 @@
 class Solution {
     public int numberOfSubstrings(String s) {
+
+        // HashMap 
+
         int l = 0, r = 0;
         int count = 0;
 
@@ -18,5 +21,20 @@ class Solution {
             r++;
         }
         return count;
+
+        // Brute Force -- But it will give TME as input is very big
+
+        // int count=0;
+
+        // for(int i=0;i<s.length();i++){
+        //     HashSet<Character> hs = new HashSet<>();
+        //     for(int j=i;j<s.length();j++){
+        //         hs.add(s.charAt(j));
+        //         if(hs.size()==3){
+        //             count++;
+        //         }
+        //     }  
+        // }
+        // return count;
     }
 }
