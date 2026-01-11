@@ -13,7 +13,7 @@ class Solution {
             }
 
             int replacements=(r-l+1)-maxFreq;
-            while(replacements>k){
+            if(replacements>k){
                 hs.put(s.charAt(l),hs.get(s.charAt(l))-1);
                 if(hs.get(s.charAt(l))==0){
                     hs.remove(s.charAt(l));
