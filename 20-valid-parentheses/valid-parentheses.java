@@ -18,12 +18,7 @@ class Solution {
             } else if (s.charAt(i) == '[') {
                 stk.push(']');
             }
-            // if (!stk.isEmpty()) {
-            //     if (stk.peek() == s.charAt(i)) {
-            //         stk.pop();
-            //     }
-
-            // }
+            
         }
         if (stk.isEmpty())
             return true;
