@@ -5,28 +5,28 @@ class Solution {
 
         // Inserting the corresponding close bracket when an open bracket is identified    
 
-        Stack<Character> stk = new Stack<>();
+        // Stack<Character> stk = new Stack<>();
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == ')' || s.charAt(i) == '}' || s.charAt(i) == ']') {
-                if (stk.isEmpty() || stk.peek() != s.charAt(i)) {
-                    return false; 
-                }
-                stk.pop(); 
-            }
-            if (s.charAt(i) == '(') {
-                stk.push(')');
-            } else if (s.charAt(i) == '{') {
-                stk.push('}');
-            } else if (s.charAt(i) == '[') {
-                stk.push(']');
-            }
+        // for (int i = 0; i < s.length(); i++) {
+        //     if (s.charAt(i) == ')' || s.charAt(i) == '}' || s.charAt(i) == ']') {
+        //         if (stk.isEmpty() || stk.peek() != s.charAt(i)) {
+        //             return false; 
+        //         }
+        //         stk.pop(); 
+        //     }
+        //     if (s.charAt(i) == '(') {
+        //         stk.push(')');
+        //     } else if (s.charAt(i) == '{') {
+        //         stk.push('}');
+        //     } else if (s.charAt(i) == '[') {
+        //         stk.push(']');
+        //     }
 
-        }
-        if (stk.isEmpty())
-            return true;
-        else
-            return false;
+        // }
+        // if (stk.isEmpty())
+        //     return true;
+        // else
+        //     return false;
 
         // // Inserting the open bracket to stack
 
@@ -51,5 +51,32 @@ class Solution {
         //     return false;
 
         
+
+
+
+        Stack<Character> stk = new Stack();
+        
+        for(int i=0;i<s.length();i++){
+            if(stk.isEmpty() && (s.charAt(i)==')' || s.charAt(i)=='}' || s.charAt(i)==']')) return false;
+            if(s.charAt(i)=='('){
+                stk.push(')');
+            }
+            else if(s.charAt(i)=='{'){
+                stk.push('}');
+            }
+            else if(s.charAt(i)=='['){
+                stk.push(']');
+            }
+            else{
+                if(!stk.isEmpty() && stk.peek()!=s.charAt(i)){
+                    return false;
+                }
+                else if(!stk.isEmpty() && stk.peek()==s.charAt(i)){
+                    stk.pop();
+                }
+            }
+        }
+        if(!stk.isEmpty()) return false;
+        return true;
     }
 }
