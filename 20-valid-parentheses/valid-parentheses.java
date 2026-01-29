@@ -71,7 +71,7 @@ class Solution {
                 if(!stk.isEmpty() && stk.peek()!=s.charAt(i)){
                     return false;
                 }
-                else if(!stk.isEmpty() && stk.peek()==s.charAt(i)){
+                else {
                     stk.pop();
                 }
             }
