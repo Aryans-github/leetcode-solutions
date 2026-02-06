@@ -1,5 +1,24 @@
 class Solution {
     public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+
+        // Stack stk = new Stack<>();
+        // int[] ans = new int[num2.length];
+        // for(int i=nums2.length;i>=0;i++){
+        //     if(stk.isEmpty()){
+        //         stk.push(nums[i]);
+        //         ans[i]=-1;
+        //     }
+        //     else if(stk.top()<=nums2[i]){
+        //         while(stk.top()<=nums2[i]){
+        //             stk.pop();
+        //         }
+        //         ans[i]=stk.top();
+        //     }
+        //     else if(stk.top()>nums2[i]){
+        //         stk.push(nums2[i]);
+        //     }
+        // }
+        // return ans;
         Stack<Integer> stk = new Stack();
         HashMap<Integer, Integer> hs = new HashMap<>();
         for (int i = 0; i < nums2.length; i++) {
