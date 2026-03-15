@@ -6,7 +6,6 @@ class Solution {
                 ls.add(i);
             }
         }
-        Collections.sort(ls);
         if(ls.size()<k) return -1;
         else return ls.get(k-1);
     }
