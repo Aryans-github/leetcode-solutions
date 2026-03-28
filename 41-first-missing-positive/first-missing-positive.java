@@ -1,6 +1,8 @@
 class Solution {
     public int firstMissingPositive(int[] nums) {
 
+        // Both are codes of cyclic sort
+
         int i=0;
         int n = nums.length;
         while(i<n){
