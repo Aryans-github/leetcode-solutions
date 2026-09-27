@@ -1,15 +1,41 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        if (nums.length == 0)
-            return 0;
-
-        int pointer = 0, count = 0;
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[pointer] != nums[i]) {
-                nums[++pointer] = nums[i];
+        
+        int p=0;
+        int q=1;
+        int count=0;
+        while(q<nums.length){
+            if(nums[p]==nums[q]) q++;
+            else{
+                p++;
+                nums[p]=nums[q];
+                q++;
+                count++;
             }
         }
-        return pointer + 1;
+        
+        return p+1;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // if (nums.length == 0)
+        //     return 0;
+
+        // int pointer = 0;
+        // for (int i = 1; i < nums.length; i++) {
+        //     if (nums[pointer] != nums[i]) {
+        //         nums[++pointer] = nums[i];
+        //     }
+        // }
+        // return pointer + 1;
         // int p = 0;
         // int q = 1;
         // int count = 1;
